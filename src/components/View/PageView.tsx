@@ -23,7 +23,7 @@ const PageView = ({
   const sections = mockSinglePageData.sections ?? [];
 
   return (
-    <main>
+    <main data-pageId={pageId}>
       {sections.map((section: Section) => getComponentBySectionType(section, subscribeMutation))}
     </main>
   );

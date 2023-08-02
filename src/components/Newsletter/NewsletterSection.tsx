@@ -16,8 +16,6 @@ export const NewsletterSection = ({ subscribeMutation }: NewsletterSectionProps)
     subscribeMutation.mutate({ email });
   };
 
-  console.log(subscribeMutation);
-
   return (
     <section style={newsletterStyle.section}>
       <h2 style={newsletterStyle.h2}>Sign up for Newsletter</h2>
