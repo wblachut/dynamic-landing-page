@@ -5,5 +5,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/dynamic-landing-page/',
   plugins: [react(), tsconfigPaths(), svgr()],
 });
