@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { fetchPages, subscribeToNewsletter } from './api/apiClient';
-import PageView from './components/View/PageView';
+import PageView from './components/view/PageView';
 import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Page } from './api/model.dto';
 import Layout from './Header/Layout';

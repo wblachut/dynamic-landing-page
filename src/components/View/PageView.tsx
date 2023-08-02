@@ -1,7 +1,7 @@
-import { TestimonialSection } from '../Testimonial/TestimonialSection';
+import { TestimonialSection } from '../section/Testimonial/TestimonialSection';
 import { NewsletterSection } from '../Newsletter/NewsletterSection';
 import { Section } from '~/api/model.dto';
-import { HeroSection } from '../Hero/HeroSection';
+import { HeroSection } from '../section/Hero/HeroSection';
 import { SectionType, SubscribeMutation } from '~/model/types';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
 

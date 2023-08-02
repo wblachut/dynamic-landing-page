@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import { ContactButton } from './ContactButton';
 import Logo from '~/assets/logo.svg';
 import { globalStyles } from '~/global/styles';
 import { getLinkName } from './helpers/navLinksHelpers';
+import { ContactButton } from '../ContactButton/ContactButton';
 
 export interface Page {
   url: string;
