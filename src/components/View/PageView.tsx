@@ -4,7 +4,7 @@ import { HeroSection } from '../section/Hero/HeroSection';
 import { SectionType, SubscribeMutation } from '~/model/types';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
 import { NewsletterSection } from '../section/Newsletter/NewsletterSection';
-import { usePageData } from './hooks/usePageData';
+import { usePageData } from '../../hooks/usePageData';
 import { Suspense } from 'react';
 import { LogoLoader } from '~/common/LogoLoader';
 
