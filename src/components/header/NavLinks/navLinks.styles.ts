@@ -4,6 +4,7 @@ export const navStyles = {
   header: {
     position: 'fixed' as const,
     width: '100vw',
+    height: '3rem',
     padding: '1rem',
     display: 'flex',
     alignItems: 'center',

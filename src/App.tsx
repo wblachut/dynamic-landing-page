@@ -11,8 +11,6 @@ export const BASE_URL = '/dynamic-landing-page';
 
 const App = () => {
   const { isLoading, isError, error, data: pagesData } = useQuery(['pages'], fetchPages);
-  // TODO: Fix Queries inside RouterProvider (for now they were treated as ones from outside provider and generated errors)
-  // "raw" solution would be to use dynamic queries and pass the result to elements (bad performance)
   const subscribeMutation = useMutation(subscribeToNewsletter);
 
   function getDynamicRoutes(): RouteObject[] {

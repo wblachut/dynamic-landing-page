@@ -1,35 +1,35 @@
 import { TestimonialSection } from '../section/Testimonial/TestimonialSection';
-import { Section, SinglePage } from '~/api/model.dto';
+import { Section } from '~/api/model.dto';
 import { HeroSection } from '../section/Hero/HeroSection';
 import { SectionType, SubscribeMutation } from '~/model/types';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
 import { NewsletterSection } from '../section/Newsletter/NewsletterSection';
-import { QueryFunction, useQuery } from 'react-query';
-import { fetchSimplePage } from '~/api/apiClient';
+import { usePageData } from './hooks/usePageData';
+import { Suspense } from 'react';
+import { LogoLoader } from '~/common/LogoLoader';
 
 const PageView = ({
   pageId,
   subscribeMutation,
 }: {
   pageId: string;
-  subscribeMutation: SubscribeMutation;
+  subscribeMutation?: SubscribeMutation;
 }) => {
-  // TODO: find out why query bellow generate error and fix it
-  // const { data, isSuccess } = useQuery({
-  //   queryKey: ['simplePage', pageId],
-  //   queryFn: fetchSimplePage(pageId!) as unknown as QueryFunction<unknown, string[]>,
-  //   enabled: !!pageId,
-  // });
-
-  const pageData = mockSinglePageData;
-  const sections = (pageData as SinglePage).sections ?? [];
+  // Custom fetch used because queries in nested Router components generated errors
+  const { pageData, isLoading, isError } = usePageData(pageId);
+  const page = pageData ?? mockSinglePageData;
+  const sections = page.sections ?? [];
+  const isSuccess = !isLoading && !isError;
 
   return (
-    <main data-pageid={pageId}>
-      {sections.map((section: Section) => (
-        <div key={section.type}>{getComponentBySectionType(section, subscribeMutation)}</div>
-      ))}
-    </main>
+    <Suspense fallback={<LogoLoader />}>
+      <main>
+        {isSuccess &&
+          sections.map((section: Section) => (
+            <div key={section.type}>{getComponentBySectionType(section, subscribeMutation)}</div>
+          ))}
+      </main>
+    </Suspense>
   );
 };
 

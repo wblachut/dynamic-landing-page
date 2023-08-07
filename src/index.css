@@ -6,13 +6,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+* section {
+  padding: 0;
 }
 
-* section {
-  margin: 0;
-  padding: 0;
+section:first-of-type {
+  padding-top: 5rem;
 }
 
 img {

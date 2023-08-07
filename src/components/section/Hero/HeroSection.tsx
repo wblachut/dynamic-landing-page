@@ -1,23 +1,4 @@
-import { globalStyles } from '~/global/styles';
-
-const heroStyle = {
-  section: {
-    ...globalStyles.section,
-    background: globalStyles.color.white,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '90vh',
-  },
-  text: {
-    width: '30vw',
-    fontSize: '2.5rem',
-  },
-  img: {
-    width: '520px',
-    height: '400px',
-    backgroundSize: 'cover',
-  },
-};
+import { heroStyle } from './hero.style';
 
 interface HeroSectionProps {
   text: string;

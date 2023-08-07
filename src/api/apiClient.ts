@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { PagesApiEndpoint } from './endpoints';
-import { NewsletterDto, Page, PagesDto, SinglePageDto } from './model.dto';
+import { NewsletterDto, Page, PagesDto, SinglePage, SinglePageDto } from './model.dto';
 import { NewsletterPayload } from '~/model/types';
 
 const ADCHITECTS_API_BASE_URL = 'https://adchitects-cms.herokuapp.com';
@@ -23,7 +23,7 @@ export async function fetchPages(): Promise<Page[]> {
 }
 
 // FETCH SIMPLE PAGE
-export async function fetchSimplePage(id: string): Promise<SinglePageDto> {
+export async function fetchSinglePage(id: string): Promise<SinglePage> {
   const response = await apiClient.get<SinglePageDto>(`${PagesApiEndpoint.SinglePage}/${id}`);
   return response.data;
 }
