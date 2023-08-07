@@ -7,7 +7,7 @@ import { LogoLoader } from './common/LogoLoader/LogoLoader';
 import { ErrorFallback } from './error/ErrorFallback';
 import { PageView } from './view/PageView';
 
-export const BASE_URL = '/dynamic-landing-page';
+export const BASENAME = '/dynamic-landing-page/';
 
 const App = () => {
   const { isLoading, isError, error, data: pagesData } = useQuery(['pages'], fetchPages);
@@ -30,7 +30,7 @@ const App = () => {
         children: getDynamicRoutes(),
       },
     ],
-    { basename: import.meta.env.DEV ? '/' : '/react-vite-gh-pages/' },
+    { basename: import.meta.env.DEV ? '/' : BASENAME },
   );
 
   if (isLoading) return <LogoLoader />;
