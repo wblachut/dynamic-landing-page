@@ -1,9 +1,11 @@
 import { TestimonialSection } from '../section/Testimonial/TestimonialSection';
-import { NewsletterSection } from '../Newsletter/NewsletterSection';
-import { Section } from '~/api/model.dto';
+import { Section, SinglePage } from '~/api/model.dto';
 import { HeroSection } from '../section/Hero/HeroSection';
 import { SectionType, SubscribeMutation } from '~/model/types';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
+import { NewsletterSection } from '../section/Newsletter/NewsletterSection';
+import { QueryFunction, useQuery } from 'react-query';
+import { fetchSimplePage } from '~/api/apiClient';
 
 const PageView = ({
   pageId,
@@ -13,18 +15,20 @@ const PageView = ({
   subscribeMutation: SubscribeMutation;
 }) => {
   // TODO: find out why query bellow generate error and fix it
+  // const { data, isSuccess } = useQuery({
+  //   queryKey: ['simplePage', pageId],
+  //   queryFn: fetchSimplePage(pageId!) as unknown as QueryFunction<unknown, string[]>,
+  //   enabled: !!pageId,
+  // });
 
-  // const { isLoading, data: singlePageData } = useQuery(
-  //   ['simplePage', pageId],
-  //   () => fetchSimplePage(pageId),
-  // );
-
-  // TODO: Use singlePageData instead of mock
-  const sections = mockSinglePageData.sections ?? [];
+  const pageData = mockSinglePageData;
+  const sections = (pageData as SinglePage).sections ?? [];
 
   return (
-    <main data-pageId={pageId}>
-      {sections.map((section: Section) => getComponentBySectionType(section, subscribeMutation))}
+    <main data-pageid={pageId}>
+      {sections.map((section: Section) => (
+        <div key={section.type}>{getComponentBySectionType(section, subscribeMutation)}</div>
+      ))}
     </main>
   );
 };

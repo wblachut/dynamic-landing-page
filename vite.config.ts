@@ -4,7 +4,16 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/dynamic-landing-page/',
-  plugins: [react(), tsconfigPaths(), svgr()],
+
+export default defineConfig(({ command }) => {
+  const config = {
+    plugins: [react(), tsconfigPaths(), svgr()],
+    base: '/',
+  };
+
+  if (command !== 'serve') {
+    config.base = '/dynamic-landing-page/';
+  }
+
+  return config;
 });
