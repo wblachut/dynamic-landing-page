@@ -3,9 +3,9 @@ import { fetchPages, subscribeToNewsletter } from './api/apiClient';
 import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Page } from './api/model.dto';
 import Layout from './components/layout/Layout';
-import { LogoLoader } from './common/LogoLoader';
+import { LogoLoader } from './common/LogoLoader/LogoLoader';
 import { ErrorFallback } from './error/ErrorFallback';
-import { PageView } from './components/view/PageView';
+import { PageView } from './view/PageView';
 
 export const BASE_URL = '/dynamic-landing-page';
 

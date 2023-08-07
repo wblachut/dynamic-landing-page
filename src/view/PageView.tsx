@@ -1,12 +1,12 @@
-import { TestimonialSection } from '../section/Testimonial/TestimonialSection';
+import { TestimonialSection } from '../components/section/Testimonial/TestimonialSection';
 import { Section } from '~/api/model.dto';
-import { HeroSection } from '../section/Hero/HeroSection';
+import { HeroSection } from '../components/section/Hero/HeroSection';
 import { SectionType, SubscribeMutation } from '~/model/types';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
-import { NewsletterSection } from '../section/Newsletter/NewsletterSection';
-import { usePageData } from '../../hooks/usePageData';
+import { NewsletterSection } from '../components/section/Newsletter/NewsletterSection';
+import { usePageData } from '../hooks/usePageData';
 import { Suspense } from 'react';
-import { LogoLoader } from '~/common/LogoLoader';
+import { LogoLoader } from '~/common/LogoLoader/LogoLoader';
 
 export const PageView = ({
   pageId,
