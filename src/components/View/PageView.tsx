@@ -8,7 +8,7 @@ import { usePageData } from './hooks/usePageData';
 import { Suspense } from 'react';
 import { LogoLoader } from '~/common/LogoLoader';
 
-const PageView = ({
+export const PageView = ({
   pageId,
   subscribeMutation,
 }: {
@@ -46,5 +46,3 @@ export const getComponentBySectionType = (section: Section, subscribeMutation: a
       return <></>;
   }
 };
-
-export default PageView;
