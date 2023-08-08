@@ -1,4 +1,4 @@
-# Fog Of War Simulator
+# Dynamic Landing Page
 
 #### Table of Contents
 
