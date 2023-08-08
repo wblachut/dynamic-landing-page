@@ -2,10 +2,10 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { fetchPages, subscribeToNewsletter } from './api/apiClient';
 import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Page } from './api/model.dto';
-import Layout from './components/layout/Layout';
-import { LogoLoader } from './common/LogoLoader/LogoLoader';
+import Layout from './components/common/layout/Layout';
+import { LogoLoader } from './components/common/LogoLoader/LogoLoader';
 import { ErrorFallback } from './error/ErrorFallback';
-import { PageView } from './view/PageView';
+import { PageView } from './components/view/PageView';
 
 export const BASENAME = '/dynamic-landing-page/';
 

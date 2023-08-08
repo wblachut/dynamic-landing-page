@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { NavLinks, PagesDataProp } from '../header/NavLinks/NavLinks';
+import { NavLinks, PagesDataProp } from '../../header/NavLinks/NavLinks';
 
 const Layout = ({ pagesData }: PagesDataProp) => {
   return (
